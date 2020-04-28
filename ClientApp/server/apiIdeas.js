@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const ideasRouter = express.Router();
 const db = require('./db.js');
 const checkMillionDollarIdea = require('./checkMillionDollarIdea.js');

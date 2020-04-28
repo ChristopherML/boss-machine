@@ -1,6 +1,7 @@
-const express = require('express')
+const express = require('express');
 const minionRouter = express.Router();
 const db = require('./db.js');
+const workRouter = require('./apiWork');
 
 
 // GET /api/minions to get an array of all minions.
@@ -47,7 +48,11 @@ minionRouter.put('/:minionId', (req, res, next) => {
 //  DELETE /api/minions/:minionId to delete a single minion by id.
 minionRouter.delete('/:minionId', (req, res, next) => {
     res.status(204).send(db.deleteFromDatabasebyId('minions', req.minion.id.toString()));
-})
+});
 
-module.exports = minionRouter
+// WORK ROUTER
+minionRouter.use('/:minionId/work', workRouter);
+
+
+module.exports = minionRouter;
 
