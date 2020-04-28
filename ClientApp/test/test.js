@@ -437,7 +437,7 @@ describe('/api/ideas routes', function() {
 
   describe('DELETE /api/ideas', function() {
     
-    it('deletes the correct minion by id', function() {
+    it('deletes the correct idea by id', function() {
       let initialIdeasArray;
       return request(app)
         .get('/api/ideas')
